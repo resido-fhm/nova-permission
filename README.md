@@ -7,7 +7,7 @@
 
 ## Note
 
-Credits to [vyuldashev](https://github.com/vyuldashev). Since the original package hasn't been updated in years now, I created this fork with all the latest changes. I use this mainly in my projects, but feel welcome to use it as well. PRs are also welcome.
+Credits to [vyuldashev](https://github.com/vyuldashev). Since the original package hasn't been updated for a while now and there's no sign from vyuldashev, I created this fork with all the latest changes. I use this mainly in my projects, but feel welcome to use it as well. PRs are also welcome.
 
 ## Installation
 
