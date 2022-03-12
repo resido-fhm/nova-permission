@@ -24,9 +24,9 @@ class RoleSelect extends Select
 
         $roleClass = app(PermissionRegistrar::class)->getRoleClass();
 
-        $options = $roleClass::get()->pluck($labelAttribute ?? 'name', 'name')->filter(function ($role) {
-            return Auth::user()->can('view', RoleModel::where('name', $role)->first());
-        })->toArray();
+        $options = $roleClass::all()->filter(function ($role) {
+            return Auth::user()->can('view', $role);
+        })->pluck($labelAttribute ?? 'name', 'name');
 
         $this->options($options);
     }
