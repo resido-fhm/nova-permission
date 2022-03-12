@@ -26,9 +26,9 @@ class PermissionBooleanGroup extends BooleanGroup
 
         $permissionClass = app(PermissionRegistrar::class)->getPermissionClass();
 
-        $options = $permissionClass::get()->pluck($labelAttribute ?? 'name', 'name')->filter(function ($permission) {
-            return Auth::user()->can('view', PermissionModel::where('name', $permission)->first());
-        })->toArray();
+        $options = $permissionClass::all()->filter(function ($permission) {
+            return Auth::user()->can('view', $permission);
+        })->pluck($labelAttribute ?? 'name', 'name');
 
         $this->options($options);
     }
