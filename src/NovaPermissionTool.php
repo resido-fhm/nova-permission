@@ -16,7 +16,11 @@ class NovaPermissionTool extends Tool
     public string $rolePolicy = RolePolicy::class;
     public string $permissionPolicy = PermissionPolicy::class;
 
-
+    /**
+     * Perform any tasks that need to happen when the tool is booted.
+     *
+     * @return void
+     */
     public function boot()
     {
         Nova::resources([
