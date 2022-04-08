@@ -1,7 +1,7 @@
 # A Laravel Nova tool for Spatie's laravel-permission library
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/kiritokatklian/nova-permission.svg?style=flat-square)](https://packagist.org/packages/kiritokatklian/nova-permission)
-[![Total Downloads](https://img.shields.io/packagist/dt/vyuldashev/nova-permission.svg?style=flat-square)](https://packagist.org/packages/vyuldashev/nova-permission)
+[![Total Downloads](https://img.shields.io/packagist/dt/kiritokatklian/nova-permission.svg?style=flat-square)](https://packagist.org/packages/kiritokatklian/nova-permission)
 
 ![screenshot 1](https://raw.githubusercontent.com/kiritokatklian/nova-permission/master/docs/user-resource.png)
 
@@ -9,9 +9,18 @@
 
 Credits to [vyuldashev](https://github.com/vyuldashev). Since the original package hasn't been updated for a while now and there's no sign from vyuldashev, I created this fork with all the latest changes. I use this mainly in my projects, but feel welcome to use it as well. PRs are also welcome.
 
+## Version Compatibility
+
+With the release of Nova 4.0, there are now two separate versions of Nova Permissions. Unfortuantly due to the nature of the update, the new one isn't backwards copmatible. So please choose your version accordingly.
+
+| Laravel Nova | Nova Permission |
+| :---: | :---: |
+| 3.0 | 3.0 - 3.2.2 |
+| 4.0 | 4.0 |
+
 ## Installation
 
-You can install the package in to a Laravel app that uses [Nova](https://nova.laravel.com) via composer:
+You can install the package in to a Laravel project that uses [Nova](https://nova.laravel.com) via composer:
 
 ```bash
 composer require kiritokatklian/nova-permission
