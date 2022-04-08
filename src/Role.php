@@ -39,6 +39,15 @@ class Role extends Resource
         'name',
     ];
 
+    /**
+     * The relationships that should be eager loaded on index queries.
+     *
+     * @var array
+     */
+    public static $with = [
+        'permissions',
+    ];
+
     public static function getModel()
     {
         return app(PermissionRegistrar::class)->getRoleClass();
