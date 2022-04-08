@@ -2,17 +2,18 @@
 
 namespace Vyuldashev\NovaPermission;
 
-use Illuminate\Http\Request;
-use Illuminate\Support\Facades\Gate;
-use Illuminate\Validation\Rule;
-use Laravel\Nova\Fields\DateTime;
-use Laravel\Nova\Fields\ID;
-use Laravel\Nova\Fields\MorphToMany;
-use Laravel\Nova\Fields\Select;
-use Laravel\Nova\Fields\Text;
 use Laravel\Nova\Nova;
 use Laravel\Nova\Resource;
+use Laravel\Nova\Fields\ID;
+use Illuminate\Http\Request;
+use Laravel\Nova\Fields\Text;
+use Illuminate\Validation\Rule;
+use Laravel\Nova\Fields\Select;
+use Laravel\Nova\Fields\DateTime;
+use Illuminate\Support\Facades\Gate;
+use Laravel\Nova\Fields\MorphToMany;
 use Spatie\Permission\PermissionRegistrar;
+use Laravel\Nova\Http\Requests\NovaRequest;
 
 class Role extends Resource
 {
@@ -87,10 +88,10 @@ class Role extends Resource
     /**
      * Get the fields displayed by the resource.
      *
-     * @param Request $request
+     * @param NovaRequest $request
      * @return array
      */
-    public function fields(Request $request)
+    public function fields(NovaRequest $request)
     {
         $guardOptions = collect(config('auth.guards'))->mapWithKeys(function ($value, $key) {
             return [$key => $key];
@@ -124,10 +125,10 @@ class Role extends Resource
     /**
      * Get the cards available for the request.
      *
-     * @param Request $request
+     * @param NovaRequest $request
      * @return array
      */
-    public function cards(Request $request)
+    public function cards(NovaRequest $request)
     {
         return [];
     }
@@ -135,10 +136,10 @@ class Role extends Resource
     /**
      * Get the filters available for the resource.
      *
-     * @param Request $request
+     * @param NovaRequest $request
      * @return array
      */
-    public function filters(Request $request)
+    public function filters(NovaRequest $request)
     {
         return [];
     }
@@ -146,10 +147,10 @@ class Role extends Resource
     /**
      * Get the lenses available for the resource.
      *
-     * @param Request $request
+     * @param NovaRequest $request
      * @return array
      */
-    public function lenses(Request $request)
+    public function lenses(NovaRequest $request)
     {
         return [];
     }
@@ -157,10 +158,10 @@ class Role extends Resource
     /**
      * Get the actions available for the resource.
      *
-     * @param Request $request
+     * @param NovaRequest $request
      * @return array
      */
-    public function actions(Request $request)
+    public function actions(NovaRequest $request)
     {
         return [];
     }
