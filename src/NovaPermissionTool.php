@@ -70,4 +70,10 @@ class NovaPermissionTool extends Tool
 
         return $this;
     }
+    
+    // This is an abstract method in nova Tool class, so we MUST implement it.
+    public function menu(Request $request)
+    {
+        return $this;
+    }
 }
