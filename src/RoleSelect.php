@@ -16,8 +16,8 @@ class RoleSelect extends Select
         parent::__construct(
             $name,
             $attribute,
-            $resolveCallback ?? static function (Collection $roles) {
-                return optional($roles->first())->name;
+            $resolveCallback ?? static function (?Collection $roles) {
+                return optional(($roles ?? collect())->first())->name;
             }
         );
 

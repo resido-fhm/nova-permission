@@ -17,8 +17,8 @@ class RoleBooleanGroup extends BooleanGroup
         parent::__construct(
             $name,
             $attribute,
-            $resolveCallback ?? static function (Collection $permissions) {
-                return $permissions->mapWithKeys(function (RoleModel $role) {
+            $resolveCallback ?? static function (?Collection $roles) {
+                return ($roles ?? collect())->mapWithKeys(function (RoleModel $role) {
                     return [$role->name => true];
                 });
             }
