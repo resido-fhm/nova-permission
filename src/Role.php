@@ -165,4 +165,19 @@ class Role extends Resource
     {
         return [];
     }
+    
+    /**
+     * 
+     * Allow the permissions to replicate with the Role
+     * 
+     * @return Role|HigherOrderTapProxy|mixed
+     */
+    public function replicate()
+    {
+        return tap(parent::replicate(), function ($resource) {
+            $model = $resource->model();
+            $model->name = 'Duplicate of '.$model->name;
+            $model->permissions = parent::model()->permissions;
+        });
+    }
 }
